@@ -1,12 +1,14 @@
 package org.example.labb1komplexjava;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-@Path("cars")
+@Path("/cars")
 public class CarResource {
 
     @GET
