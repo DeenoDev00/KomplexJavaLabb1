@@ -8,6 +8,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import org.example.labb1komplexjava.Entitys.Car;
 
 import java.lang.invoke.MethodHandles;
 import java.time.LocalDate;

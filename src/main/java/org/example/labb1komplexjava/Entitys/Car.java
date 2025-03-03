@@ -1,14 +1,17 @@
-package org.example.labb1komplexjava;
+package org.example.labb1komplexjava.Entitys;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Positive;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Getter
 @Entity
 public class Car {
 
@@ -16,18 +19,23 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long carId;
 
+    @Setter
     @NotBlank(message = "Name can not be empty")
     private String carName;
 
+    @Setter
     private String description;
 
+    @Setter
     @PastOrPresent(message = "Date can not be in the future")
     private LocalDate Manufacturedate;
 
+    @Setter
     @Pattern(regexp = "^[A-Z]{3}[0-9]{2}[A-Z0-9]$", message = "Ogiltigt registreringsnummer")
     @Column(unique = true)
     private String carRegistrationNumber;
 
+    @Setter
     @Positive(message = "HorsePower must be positive")
     private int horsePower;
 
@@ -40,50 +48,6 @@ public class Car {
         this.description = description;
         this.Manufacturedate = Manufacturedate;
         this.carRegistrationNumber = carRegistrationNumber;
-        this.horsePower = horsePower;
-    }
-
-    public Long getCarId() {
-        return carId;
-    }
-
-    public String getCarName() {
-        return carName;
-    }
-
-    public void setCarName(String carName) {
-        this.carName = carName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public LocalDate getManufacturedate() {
-        return Manufacturedate;
-    }
-
-    public void setManufacturedate(LocalDate Manufacturedate) {
-        this.Manufacturedate = Manufacturedate;
-    }
-
-    public String getCarRegistrationNumber() {
-        return carRegistrationNumber;
-    }
-
-    public void setCarRegistrationNumber(String carRegistrationNumber) {
-        this.carRegistrationNumber = carRegistrationNumber;
-    }
-
-    public int getHorsePower() {
-        return horsePower;
-    }
-
-    public void setHorsePower(int horsePower) {
         this.horsePower = horsePower;
     }
 
